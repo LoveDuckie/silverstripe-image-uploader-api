@@ -1,0 +1,7 @@
+
+---
+Name: loveduckie-silverstripe-imageuploaderapi-config
+---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - LoveDuckie\Extensions\ImageUploaderApiConfigurationExtension

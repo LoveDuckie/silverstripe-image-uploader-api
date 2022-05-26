@@ -40,8 +40,9 @@ Provide a yaml code example where possible.
 --
 name: imageuploaderapi-configuration
 --
-LoveDuckie\SilverStripe\ImageUploaderAPI:
-  api_token: kslutdeigujieeseloyyylquyzakullg
+LoveDuckie\SilverStripe\ImageUploaderApi:
+  api_token: ACZ4CAUSzjAwXcfm
+  api_content_type: application/json
   
 ```
 

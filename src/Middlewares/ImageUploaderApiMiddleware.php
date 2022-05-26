@@ -5,7 +5,7 @@ namespace LoveDuckie\SilverStripe\ImageUploaderApi\Middlewares;
 use SilverStripe\Control\Middleware\HTTPMiddleware;
 use SilverStripe\Control\HTTPRequest;
 
-class ImageUploaderApiMiddleware extends HTTPMiddleware
+class ImageUploaderApiMiddleware implements HTTPMiddleware
 {
     public function process(HTTPRequest $request, callable $delegate)
     {

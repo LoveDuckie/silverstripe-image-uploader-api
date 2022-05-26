@@ -4,9 +4,9 @@ Name: loveduckie-silverstripe-imageuploaderapi-config
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - LoveDuckie\Extensions\ImageUploaderApiConfigurationExtension
----
-Name: loveduckie-silverstripe-imageuploaderapi-director
-After: framework/_config/routes#coreroutes
----
-SilverStripe\Control\Director:
-  rules:
+# ---
+# Name: loveduckie-silverstripe-imageuploaderapi-director
+# After: framework/_config/routes#coreroutes
+# ---
+# SilverStripe\Control\Director:
+#   rules:

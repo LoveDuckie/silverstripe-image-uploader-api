@@ -1,6 +1,6 @@
 {
-    "name": "silverstripe-module/skeleton",
-    "description": "A skeleton for SilverStripe modules.",
+    "name": "loveduckie/silverstripe-image-uploader-api",
+    "description": "A Silverstripe module for exposing an API for enabling remote image uploads..",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
@@ -17,8 +17,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SilverStripeModule\\Skeleton\\": "src/",
-            "SilverStripeModule\\Skeleton\\Tests\\": "tests/"
+            "LoveDuckie\\SilverStripe\\ImageUploaderAPI\\": "src/",
+            "LoveDuckie\\SilverStripe\\ImageUploaderAPI\\Tests\\": "tests/"
         }
     },
     "extra": {

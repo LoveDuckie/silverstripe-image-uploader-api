@@ -1,6 +1,6 @@
 <?php
 
-namespace LoveDuckie\SilverStripe\ImageUploaderApi;
+namespace LoveDuckie\SilverStripe\ImageUploaderApi\Controllers;
 
 use SilverStripe\Assets\Upload;
 

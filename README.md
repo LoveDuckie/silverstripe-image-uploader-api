@@ -14,7 +14,7 @@ Here is a composer command to create a new module project. Ensure you read the
 and update your module's composer.json to designate your code as a SilverStripe module.
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 composer require loveduckie/silverstripe-image-uploader-api 4.x-dev
 ```
 
@@ -43,7 +43,7 @@ name: imageuploaderapi-configuration
 LoveDuckie\SilverStripe\ImageUploaderApi:
   api_token: ACZ4CAUSzjAwXcfm
   api_content_type: application/json
-  
+
 ```
 
 ## Maintainers

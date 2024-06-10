@@ -1,10 +1,9 @@
 <?php
 
-namespace LoveDuckie\SilverStripe\ImageUploaderApi;
-
-use SilverStripe\Assets\Upload;
+namespace LoveDuckie\SilverStripe\ImageUploaderApi\Controllers;
 
 use Exception;
+use SilverStripe\Assets\Upload;
 use SilverStripe\Control\HTTPRequest;
 
 class ImageUploaderApiController extends Upload
@@ -49,6 +48,11 @@ class ImageUploaderApiController extends Upload
             if ($this->getHeaders()['Content-Type'] != "application/json") {
                 return $this->httpError(400, static::generateResponse("Invalid request.", 403));
             }
+        }
+
+        $requestBody = $request->getBody();
+        if (!isset($requestBody)) {
+            throw new Exception("The request body is invalid or null.")
         }
     }
 }

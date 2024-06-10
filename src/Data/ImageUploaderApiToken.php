@@ -1,13 +1,13 @@
 <?php
 
-namespace LoveDuckie\SilverStripe\ImageUploaderApi;
+namespace LoveDuckie\SilverStripe\ImageUploaderApi\Data;
 
 use SilverStripe\ORM\DataObject;
 
 class ImageUploaderApiToken extends DataObject
 {
     private static $table_name = "ImageUploaderApiToken";
- 
+
     private static $singular_name ="Image Uploader API Token";
 
     private static $plural_name ="Image Uploader API Tokens";

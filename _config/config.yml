@@ -10,3 +10,10 @@ SilverStripe\SiteConfig\SiteConfig:
 # ---
 # SilverStripe\Control\Director:
 #   rules:
+
+---
+Name: loveduckie-silverstripe-image-uploader-api-director
+---
+SilverStripe\Control\Director:
+  rules:
+    'api/image-upload': 'LoveDuckie\SilverStripe\ImageUploaderApi\Controllers\ImageUploaderController'

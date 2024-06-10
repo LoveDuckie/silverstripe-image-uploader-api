@@ -1,6 +1,6 @@
 <?php
 
-namespace LoveDuckie\Extensions;
+namespace LoveDuckie\SilverStripe\ImageUploaderApi\Extensions;
 
 use SilverStripe\ORM\DataExtension;
 

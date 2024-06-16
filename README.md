@@ -1,10 +1,14 @@
-# Silverstripe Image Uploader API
+<div align="center">
 
-This module enables you to expose a secure and RESTful API for remotely uploading images, and storing them as files (with their records) in Silverstripe. Refer to documentaiton below about usage.
+# silverstripe-image-uploader-api
+
+</div>
+
+This module enables you to expose a secure and RESTful API for remotely uploading image assets, and storing them as files (with their associative database records) in Silverstripe. Refer to documentaiton below about usage.
 
 ## Requirements
 
-* Silverstripe ^4.0
+* Silverstripe ^5.0
 
 ## Installation
 
@@ -15,7 +19,7 @@ and update your module's composer.json to designate your code as a SilverStripe 
 
 ```bash
 #!/usr/bin/env bash
-composer require loveduckie/silverstripe-image-uploader-api 4.x-dev
+composer require loveduckie/silverstripe-image-uploader-api
 ```
 
 **Note:** When you have completed your module, submit it to Packagist or add it as a VCS repository to your

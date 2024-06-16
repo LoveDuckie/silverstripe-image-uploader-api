@@ -1,6 +1,6 @@
 {
     "name": "loveduckie/silverstripe-image-uploader-api",
-    "description": "A Silverstripe module for exposing an API for enabling remote image uploads..",
+    "description": "A Silverstripe module for exposing an API for enabling remote image uploads.",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
@@ -8,23 +8,22 @@
     ],
     "license": "BSD-3-Clause",
     "require": {
-        "silverstripe/framework": "^4.10 | ^5.0",
-        "silverstripe/admin": "^1.0"
+        "silverstripe/framework": "^5.0",
+        "silverstripe/admin": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7",
-        "squizlabs/php_codesniffer": "^3.0"
+        "squizlabs/php_codesniffer": "^3.0",
+        "silverstripe/standards": "^1",
+        "phpstan/extension-installer": "^1.3"
     },
     "autoload": {
         "psr-4": {
-            "LoveDuckie\\SilverStripe\\ImageUploaderApi\\": "src/",
-            "LoveDuckie\\SilverStripe\\ImageUploaderApi\\Tests\\": "tests/"
+            "LoveDuckie\\Silverstripe\\ImageUploaderApi\\": "src/",
+            "LoveDuckie\\Silverstripe\\ImageUploaderApi\\Tests\\": "tests/"
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "2.x-dev"
-        },
         "expose": [
             "client/dist"
         ]

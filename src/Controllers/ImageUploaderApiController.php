@@ -5,18 +5,31 @@ namespace LoveDuckie\SilverStripe\ImageUploaderApi\Controllers;
 use Exception;
 use SilverStripe\Assets\Upload;
 use SilverStripe\Control\HTTPRequest;
+use SilverStripe\Control\HTTPResponse;
 
 class ImageUploaderApiController extends Upload
 {
-    private static $allowed_actions = [
+    /**
+     * @var array|string[]
+     */
+    private static array $allowed_actions = [
         "upload"
     ];
 
-    private static $url_handlers = [
+    /**
+     * @var array|string[]
+     */
+    private static array $url_handlers = [
         'POST /' => 'upload',
     ];
 
-    public function isValidApiToken(string $apiToken)
+    /**
+     * Determines whether the specified API token is considered valid.
+     * @param string $apiToken
+     * @return false
+     * @throws Exception
+     */
+    public function isValidApiToken(string $apiToken): false
     {
         if (empty($apiToken)) {
             throw new Exception("The API token specified is invalid or null");
@@ -25,7 +38,15 @@ class ImageUploaderApiController extends Upload
         return false;
     }
 
-    private static function generateResponse(string $message, int $code)
+
+    /**
+     * Generate the JSON response
+     *
+     * @param string $message
+     * @param int $code
+     * @return false|string
+     */
+    private static function generateJsonResponse(string $message, int $code): false|string
     {
         $response = [
             "id" =>  uniqid(),
@@ -36,23 +57,40 @@ class ImageUploaderApiController extends Upload
         return json_encode($response, JSON_PRETTY_PRINT);
     }
 
+
+    /**
+     * Instantiate the HTTP response object based on the JSON encoded message and status code.
+     *
+     * @param string $message
+     * @param int $code
+     * @return HTTPResponse
+     */
+    private static function generateHttpResponse(string $message, int $code): HTTPResponse
+    {
+        return new HTTPResponse(self::generateJsonResponse($message,$code));
+    }
+
+
+    /**
+     * @param HTTPRequest $request
+     * @return void|null
+     * @throws Exception
+     */
     public function upload(HTTPRequest $request)
     {
-        if (!$request) {
-            throw new Exception("The request is invalid or null");
-        }
         if (!$request->isPOST()) {
-            if (!array_key_exists("Content-Type", $this->getHeaders())) {
-                return $this->httpError(400, static::generateResponse("The content-type was not defined.", 403));
+            if (!array_key_exists("Content-Type", $request->getHeaders())) {
+                $this->getResponse()->setStatusCode(400);
+                return null;
             }
-            if ($this->getHeaders()['Content-Type'] != "application/json") {
-                return $this->httpError(400, static::generateResponse("Invalid request.", 403));
+            if ($request->getHeaders()['Content-Type'] != "application/json") {
+                return null;
             }
         }
-
+        $this->setResponse(self::generateHttpResponse("Test",200));
         $requestBody = $request->getBody();
         if (!isset($requestBody)) {
-            throw new Exception("The request body is invalid or null.")
+            throw new Exception("The request body is invalid or null.");
         }
     }
 }

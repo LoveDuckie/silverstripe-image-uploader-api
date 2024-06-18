@@ -3,32 +3,28 @@
 namespace LoveDuckie\SilverStripe\ImageUploaderApi\Controllers;
 
 use SilverStripe\AssetAdmin\Controller\AssetAdmin;
+use SilverStripe\Control\Controller;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Control\HTTPResponse;
+use SilverStripe\Control\HTTPResponse_Exception;
 use SilverStripe\Forms\FileUploadReceiver;
 
 use SilverStripe\Assets\File;
+use SilverStripe\ORM\ValidationException;
 
-class ImageUploaderController
+class ImageUploaderController extends Controller
 {
     use FileUploadReceiver;
 
-    public function authenticate() {
-
-    }
 
     /**
-     * Creates a single file based on a form-urlencoded upload.
-     *
      * @param HTTPRequest $request
      * @return HTTPResponse
+     * @throws HTTPResponse_Exception
+     * @throws ValidationException
      */
-    public function index(HTTPRequest $request)
+    public function index(HTTPRequest $request): HTTPResponse
     {
-//        if ($this->isDisabled() || $this->isReadonly()) {
-//            return $this->httpError(403);
-//        }
-
         // CSRF check
         $token = $this->getForm()->getSecurityToken();
         if (!$token->checkRequest($request)) {

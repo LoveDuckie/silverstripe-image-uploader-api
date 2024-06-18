@@ -1,10 +1,10 @@
-# SilverStripe Image Uploader API
+# Silverstripe Image Uploader API
 
 This module enables you to expose a secure and RESTful API for remotely uploading images, and storing them as files (with their records) in Silverstripe. Refer to documentaiton below about usage.
 
 ## Requirements
 
-* SilverStripe ^4.0
+* Silverstripe ^4.0
 
 ## Installation
 

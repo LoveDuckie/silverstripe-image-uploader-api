@@ -4,17 +4,16 @@ namespace LoveDuckie\SilverStripe\ImageUploaderApi\Extensions;
 
 use SilverStripe\ORM\DataExtension;
 
-use SilverStripe\Forms\Tab;
-
 use SilverStripe\Forms\FieldList;
 
 class ImageUploaderApiConfigurationExtension extends DataExtension
 {
+    /**
+     * @param FieldList $fields
+     * @return void
+     */
     public function updateCMSFields(FieldList $fields)
     {
-        $tabsToAdd = [];
-        $tabsToAdd[] = Tab::create();
-
         return parent::updateCMSFields($fields);
     }
 }

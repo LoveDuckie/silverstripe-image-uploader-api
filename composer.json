@@ -31,8 +31,8 @@
     },
     "autoload": {
         "psr-4": {
-            "LoveDuckie\\Silverstripe\\ImageUploaderApi\\": "src/",
-            "LoveDuckie\\Silverstripe\\ImageUploaderApi\\Tests\\": "tests/"
+            "LoveDuckie\\SilverStripe\\ImageUploaderApi\\": "src/",
+            "LoveDuckie\\SilverStripe\\ImageUploaderApi\\Tests\\": "tests/"
         }
     },
     "extra": {

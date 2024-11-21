@@ -1,6 +1,7 @@
 {
     "name": "loveduckie/silverstripe-image-uploader-api",
     "description": "A Silverstripe module for exposing an API for enabling remote image uploads.",
+    "homepage": "https://lucshelton.com",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
